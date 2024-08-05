@@ -27,7 +27,6 @@ theme:
       accent: lime
 
 plugins:
-  - glightbox
   - search
 
 markdown_extensions:
