@@ -1,4 +1,4 @@
-site_name: How to run C++ locally
+site_name: How to run C++ code locally
 theme:
   name: material
   features:
@@ -27,9 +27,12 @@ theme:
       accent: lime
 
 plugins:
+  - glightbox
   - search
 
 markdown_extensions:
+  - attr_list
+  - md_in_html
   - pymdownx.highlight:
       anchor_linenums: true
   - pymdownx.inlinehilite
