@@ -14,13 +14,13 @@
 ## Installing g++ compiler
 
 
-**In this tutorial I expalined two way to install g++ compiler:**
+**In this tutorial, I explain two ways to install g++ compiler:**
 
-*   **MinGW** (Minimalist GUN for Windows, originally called mingw32) is a native Windows port of the GNU Compiler Collection (GCC), that provide header files and free distributable import libraries for creating native Windows applications.<br>
-**Note that: all the programs produced under MinGW are 32-bit executables, but it can be used in 32 and 64-bit versions of Windows**
+*   **MinGW** (Minimalist GUN for Windows, originally called mingw32) is a native Windows port of the GNU Compiler Collection (GCC) that provides header files and free distributable import libraries for creating native Windows applications.<br>
+<span style="color:red">Note that all the programs produced under MinGW are 32-bit executables, but they can be used in 32-bit and 64-bit versions of Windows.</span>
 
-*   **MinGW-w64** is an advancement of the original MinGW project, It has forked it in 2007 in order to provide support for 64 bits and new APIs.<br>
-**Note that: MinGW-w64 support binaries native to Windows 64-bit and 32-bit operating systems.**
+*   **MinGW-w64** is an advancement of the original MinGW project. It was forked in 2007 in order to provide support for 64 bits and new APIs.<br>
+<span style="color:red">Note that MinGW-w64 supports binaries native to Windows 64-bit and 32-bit operating systems.</span>
 
 ### Installing g++ compiler use MinGW Installation Manager
 
@@ -38,36 +38,36 @@
     <figure markdown="span">
     ![MinGW Installation Manager Setup Tool](image/install_mingw-3.png){ width="600" }
     </figure>
-5.	In `MinGW Installation Manager` select `mingw32-base-bin` by clicking on the square control beside the package name. You should see as below <br>
+5.	In `MinGW Installation Manager` select `mingw32-base-bin` by clicking on the square control beside the package name. You should see as below: <br>
     <figure markdown="span">
     ![MinGW Installation Manager Setup Tool](image/install_mingw-4.png){ width="600" }
     </figure>
-6.	Also, you should select all the following package as below<br>
+6.	Also, you should select all the following package as below:<br>
     <figure markdown="span">
     ![MinGW Installation Manager Setup Tool](image/install_mingw-5.png){ width="600" }
     </figure>
-7.	On the menu bar, select `Installation` :material-arrow-right: `Apply Changes` as shown below<br>
+7.	On the menu bar, select `Installation` :material-arrow-right: `Apply Changes` as shown below:<br>
     <figure markdown="span">
     ![MinGW Installation Manager Setup Tool](image/install_mingw-6.png){ width="600" }
     </figure>
-8.	Click on the `Apply` as shown below
+8.	Click on the `Apply` as shown below:
     <figure markdown="span">
      ![MinGW Installation Manager Setup Tool](image/install_mingw-7.png){ width="600" }
     </figure>
 9.	Finally, After the installation finish click on `Close`
-10. After that, go to the installation directory [*in my case* `C:\MinGW\bin`] and copy the directory of the bin folder as shown below<br>
+10. After that, go to the installation directory [*in my case* `C:\MinGW\bin`] and copy the directory of the bin folder as shown below:<br>
     <figure markdown="span">
     ![MinGW Installation directory](image/install_mingw-9.png){ width="600" }
     </figure>
-11. Go to the setting and write `env` on the search bar, select `Edit environment variables for your account` as shown below<br>
+11. Go to the setting and write `env` on the search bar, select `Edit environment variables for your account` as shown below:<br>
     <figure markdown="span">
     ![Windows Setting](image/install_mingw-10.png){ width="600" }
     </figure>
-12.	Select `path` and click on `Edit` as shown below<br>
+12.	Select `path` and click on `Edit` as shown below:<br>
     <figure markdown="span">
     ![Windows Setting](image/install_mingw-11.png){ width="600" }
     </figure>
-13.	Click on `New` to add your copied MinGW path [ *in my case* `C:\MinGW\bin` ]<br>
+13. Click on `New` to add your copied MinGW path [ *in my case* `C:\MinGW\bin` ]<br>
     <figure markdown="span">
     ![Windows Setting](image/install_mingw-12.png){ width="600" }
     </figure>
@@ -77,19 +77,12 @@
 ### Installing g++ compiler use MinGW-w64
 
 
-**[MinGW-w64](https://www.mingw-w64.org/downloads)** is come three flavors for Windows: GitHub, WinLibs or MSYS2.
-Here we will use the **WinLibs** flavor (standalone build of GCC and MinGW-w64 for Windows).
+**[MinGW-w64](https://www.mingw-w64.org/downloads)** comes in three flavors for Windows: GitHub, WinLibs, or MSYS2. Here we will use the **WinLibs** flavor (a standalone build of GCC and MinGW-w64 for Windows).
 
 
-1. Visit the webisite **[WinLibs](https://winlibs.com/)**, Here we will download release versions **UCRT** (Univarsal C Runtime) with the threading library POSIX threads / pthread.h. Under UCRT, select GCC version with POSIX threads, for example click on Win32 (without LLVM/Clang/LLD/LLDB) or Win64 (without LLVM/Clang/LLD/LLDB) based on your system as shown below, or download GCC 14.2.0 (with POSIX threads) directorly from here **[Win32](https://github.com/brechtsanders/winlibs_mingw/releases/download/14.2.0posix-18.1.8-12.0.0-ucrt-r1/winlibs-i686-posix-dwarf-gcc-14.2.0-mingw-w64ucrt-12.0.0-r1.zip)** or **[Win64](https://github.com/brechtsanders/winlibs_mingw/releases/download/14.2.0posix-18.1.8-12.0.0-ucrt-r1/winlibs-x86_64-posix-seh-gcc-14.2.0-mingw-w64ucrt-12.0.0-r1.zip)**
-<figure markdown="span">
-![WinLibs](image/winlibs-1.png){ width="600" }
-</figure>
-2. Extract winlibs downloaded file on the `C:` directory as shown below
-<figure markdown="span">
-![WinLibs](image/winlibs-2.png){ width="600" }
-</figure>
-3. Copy the directory of the bin folder `C:\mingw64\bin` in my case, then add it to the environment variable path fellow the same steps from 11 to 14 on **Installing g++ compiler use MinGW Installation Manager**
+1. Visit the website **[WinLibs](https://winlibs.com/)**. Here we will download release versions of **UCRT** (Univarsal C Runtime) with the threading library POSIX threads/pthread.h. Under UCRT, select the GCC version with POSIX threads. For example, click on Win32 (without LLVM/Clang/LLD/LLDB) or Win64 (without LLVM/Clang/LLD/LLDB) based on your system as shown below, or download GCC 14.2.0 (with POSIX threads) directly from here: **[Win32](https://github.com/brechtsanders/winlibs_mingw/releases/download/14.2.0posix-18.1.8-12.0.0-ucrt-r1/winlibs-i686-posix-dwarf-gcc-14.2.0-mingw-w64ucrt-12.0.0-r1.zip)** or **[Win64](https://github.com/brechtsanders/winlibs_mingw/releases/download/14.2.0posix-18.1.8-12.0.0-ucrt-r1/winlibs-x86_64-posix-seh-gcc-14.2.0-mingw-w64ucrt-12.0.0-r1.zip)**<figure markdown="span">![WinLibs](image/winlibs-1.png){ width="600" }</figure>
+2. Extract the **Winlibs** downloaded file to the `C:` directory, as shown below.<br><figure markdown="span">![WinLibs](image/winlibs-2.png){ width="600" }</figure>
+3. Copy the directory of the bin folder `C:\mingw64\bin` in my case, then add it to the environment variable path, following the same steps from <span style="color:red">11 </span>to <span style="color:red">14 </span>on [**Installing g++ compiler, use MinGW Installation Manager**](index.md/#installing-g-compiler-use-mingw-installation-manager)
 
 ## Installing Visual Studio Code
 
@@ -141,7 +134,7 @@ Here we will use the **WinLibs** flavor (standalone build of GCC and MinGW-w64 f
     ![VS code](image/VScode-11.png){ width="600" }
     </figure>
 8. Before to add `pthread.h` header file you need to install `pthreads` library also known as `POSIX` threads, which is provides a way to create and manage threads in multi-threaded program. To install the library use `mingw-get` command and write `mingw-get install pthreads` on the terminal<br>
-**Skip this step if you Installing g++ compiler use MinGW-w64**
+<span style="color:red">Skip this step if you are installing g++ compiler use MinGW-w64</span>
     <figure markdown="span">  
     ![VS code](image/VScode-12.png){ width="600" }
     </figure>
