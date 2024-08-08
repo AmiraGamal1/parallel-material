@@ -7,7 +7,7 @@
 
   **Software:** <br>
 
-  *   MinGW Installation Manager or MinGW-w64
+  *   MinGW Installation Manager <span style="color:red">or</span> MinGW-w64
   *   Visual Studio code
 
 
