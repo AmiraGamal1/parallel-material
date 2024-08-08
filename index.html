@@ -1,0 +1,591 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="image/fmsi.png">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.31">
+    
+    
+      
+        <title>How to run C++ code locally</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.3cba04c6.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#how-to-run-c-code-locally" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="." title="How to run C++ code locally" class="md-header__button md-logo" aria-label="How to run C++ code locally" data-md-component="logo">
+      
+  <img src="image/fmsi.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            How to run C++ code locally
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              How to run c++ code locally
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="purple"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="blue-grey" data-md-color-accent="lime"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="." class="md-tabs__link">
+        
+  
+    
+  
+  How to run c++ code locally
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="." title="How to run C++ code locally" class="md-nav__button md-logo" aria-label="How to run C++ code locally" data-md-component="logo">
+      
+  <img src="image/fmsi.png" alt="logo">
+
+    </a>
+    How to run C++ code locally
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    How to run c++ code locally
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="." class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    How to run c++ code locally
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#installing-g-compiler" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installing g++ compiler
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Installing g++ compiler">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#installing-g-compiler-use-mingw-installation-manager" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installing g++ compiler use MinGW Installation Manager
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#installing-g-compiler-use-mingw-w64" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installing g++ compiler use MinGW-w64
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installing-visual-studio-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installing Visual Studio Code
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#running-c-parallel-code-on-vs-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      Running C++ parallel code on VS code
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="how-to-run-c-code-locally">How to run c++ code locally</h1>
+<p><strong>Objective:</strong> <br></p>
+<ul>
+<li>To setup your development environment.</li>
+<li>To compile and run an cpp parallel program.</li>
+</ul>
+<p><strong>Software:</strong> <br></p>
+<ul>
+<li>MinGW Installation Manager <span style="color:red">or</span> MinGW-w64</li>
+<li>Visual Studio code</li>
+</ul>
+<h2 id="installing-g-compiler">Installing g++ compiler</h2>
+<p><strong>In this tutorial, I explain two ways to install g++ compiler:</strong></p>
+<ul>
+<li>
+<p><strong>MinGW</strong> (Minimalist GUN for Windows, originally called mingw32) is a native Windows port of the GNU Compiler Collection (GCC) that provides header files and free distributable import libraries for creating native Windows applications.<br>
+<span style="color:red">Note that all the programs produced under MinGW are 32-bit executables, but they can be used in 32-bit and 64-bit versions of Windows.</span></p>
+</li>
+<li>
+<p><strong>MinGW-w64</strong> is an advancement of the original MinGW project. It was forked in 2007 in order to provide support for 64 bits and new APIs.<br>
+<span style="color:red">Note that MinGW-w64 supports binaries native to Windows 64-bit and 32-bit operating systems.</span></p>
+</li>
+</ul>
+<h3 id="installing-g-compiler-use-mingw-installation-manager">Installing g++ compiler use MinGW Installation Manager</h3>
+<ol>
+<li>Visit the website <strong><a href="https://sourceforge.net/projects/mingw/">MinGW</a></strong> and click on Download.</li>
+<li>Once the file is downloaded. Open the <code>mingw-get-setup.exe</code> file then click on [<strong>Install</strong>]<br>
+    <figure markdown="span">
+    <img alt="MinGW Installation Manager Setup Tool" src="image/install_mingw-1.png" width="600" />
+    </figure></li>
+<li>I am going to install MinGW under <code>C:</code> directory, click on [<strong>continue</strong>]<br>
+    <figure markdown="span">
+    <img alt="MinGW Installation Manager Setup Tool" src="image/install_mingw-2.png" width="600" />
+    </figure></li>
+<li>Wait MinGW to install then click on [<strong>continue</strong>]<br>
+    <figure markdown="span">
+    <img alt="MinGW Installation Manager Setup Tool" src="image/install_mingw-3.png" width="600" />
+    </figure></li>
+<li>In <code>MinGW Installation Manager</code> select <code>mingw32-base-bin</code> by clicking on the square control beside the package name. You should see as below: <br>
+    <figure markdown="span">
+    <img alt="MinGW Installation Manager Setup Tool" src="image/install_mingw-4.png" width="600" />
+    </figure></li>
+<li>Also, you should select all the following package as below:<br>
+    <figure markdown="span">
+    <img alt="MinGW Installation Manager Setup Tool" src="image/install_mingw-5.png" width="600" />
+    </figure></li>
+<li>On the menu bar, select <code>Installation</code> <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg></span> <code>Apply Changes</code> as shown below:<br>
+    <figure markdown="span">
+    <img alt="MinGW Installation Manager Setup Tool" src="image/install_mingw-6.png" width="600" />
+    </figure></li>
+<li>Click on the <code>Apply</code> as shown below:
+    <figure markdown="span">
+     <img alt="MinGW Installation Manager Setup Tool" src="image/install_mingw-7.png" width="600" />
+    </figure></li>
+<li>Finally, After the installation finish click on <code>Close</code></li>
+<li>After that, go to the installation directory [<em>in my case</em> <code>C:\MinGW\bin</code>] and copy the directory of the bin folder as shown below:<br>
+    <figure markdown="span">
+    <img alt="MinGW Installation directory" src="image/install_mingw-9.png" width="600" />
+    </figure></li>
+<li>Go to the setting and write <code>env</code> on the search bar, select <code>Edit environment variables for your account</code> as shown below:<br>
+    <figure markdown="span">
+    <img alt="Windows Setting" src="image/install_mingw-10.png" width="600" />
+    </figure></li>
+<li>Select <code>path</code> and click on <code>Edit</code> as shown below:<br>
+    <figure markdown="span">
+    <img alt="Windows Setting" src="image/install_mingw-11.png" width="600" />
+    </figure></li>
+<li>Click on <code>New</code> to add your copied MinGW path [ <em>in my case</em> <code>C:\MinGW\bin</code> ]<br>
+    <figure markdown="span">
+    <img alt="Windows Setting" src="image/install_mingw-12.png" width="600" />
+    </figure></li>
+<li>Finally click on OK <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg></span> OK</li>
+</ol>
+<h3 id="installing-g-compiler-use-mingw-w64">Installing g++ compiler use MinGW-w64</h3>
+<p><strong><a href="https://www.mingw-w64.org/downloads">MinGW-w64</a></strong> comes in three flavors for Windows: GitHub, WinLibs, or MSYS2. Here we will use the <strong>WinLibs</strong> flavor (a standalone build of GCC and MinGW-w64 for Windows).</p>
+<ol>
+<li>Visit the website <strong><a href="https://winlibs.com/">WinLibs</a></strong>. Here we will download release versions of <strong>UCRT</strong> (Univarsal C Runtime) with the threading library POSIX threads/pthread.h. Under UCRT, select the GCC version with POSIX threads. For example, click on Win32 (without LLVM/Clang/LLD/LLDB) or Win64 (without LLVM/Clang/LLD/LLDB) based on your system as shown below, or download GCC 14.2.0 (with POSIX threads) directly from here: <strong><a href="https://github.com/brechtsanders/winlibs_mingw/releases/download/14.2.0posix-18.1.8-12.0.0-ucrt-r1/winlibs-i686-posix-dwarf-gcc-14.2.0-mingw-w64ucrt-12.0.0-r1.zip">Win32</a></strong> or <strong><a href="https://github.com/brechtsanders/winlibs_mingw/releases/download/14.2.0posix-18.1.8-12.0.0-ucrt-r1/winlibs-x86_64-posix-seh-gcc-14.2.0-mingw-w64ucrt-12.0.0-r1.zip">Win64</a></strong><figure markdown="span"><img alt="WinLibs" src="image/winlibs-1.png" width="600" /></figure></li>
+<li>Extract the <strong>Winlibs</strong> downloaded file to the <code>C:</code> directory, as shown below.<br><figure markdown="span"><img alt="WinLibs" src="image/winlibs-2.png" width="600" /></figure></li>
+<li>Copy the directory of the bin folder <code>C:\mingw64\bin</code> in my case, then add it to the environment variable path, following the same steps from <span style="color:red">11 </span>to <span style="color:red">14 </span>on <a href="./#installing-g-compiler-use-mingw-installation-manager"><strong>Installing g++ compiler, use MinGW Installation Manager</strong></a></li>
+</ol>
+<h2 id="installing-visual-studio-code">Installing Visual Studio Code</h2>
+<ol>
+<li>Visit the website <strong><a href="https://code.visualstudio.com/Download">VS code</a></strong> Click on <code>Windows</code> to download VS code for Windows, as shown below<br>
+    <figure markdown="span">
+    <img alt="Windows Setting" src="image/VScode-1.png" width="600" />
+    </figure></li>
+<li>After the download finished open the <code>VSCodeUserSetup</code> executable file, when it open select <code>I accept the agreement</code> then click on <code>Next</code><br>
+    <figure markdown="span">
+    <img alt="Windows Setting" src="image/VScode-2.png" width="600" />
+    </figure></li>
+<li>
+<p>Select all the option as seen below<br>
+    <figure markdown="span">
+    <img alt="Windows Setting" src="image/VScode-3.png" width="600" />
+    </figure></p>
+</li>
+<li>
+<p>Finally we are ready to install the VS code, click on <code>install</code> and wait untail the setup finish</p>
+</li>
+<li>On the Vs code, on the left-hand side, click on <code>extension</code> then in the search bar, write <code>C++</code> select <code>C/C++</code> and click on <code>Install</code> as shown below<br>
+    <figure markdown="span">
+    <img alt="Windows Setting" src="image/VScode-10.png" width="600" />
+    </figure></li>
+<li>Close <code>Vs code</code></li>
+</ol>
+<h2 id="running-c-parallel-code-on-vs-code">Running C++ parallel code on VS code</h2>
+<ol>
+<li>Right click on the Windows button <code>or press windows + x</code> then select <code>Windows PowerShell Admin</code> as shown below<br>
+    <figure markdown="span">
+    <img alt="Windows Setting" src="image/VScode-5.png" width="300" />
+    </figure></li>
+<li>Navigate to <code>D:</code> directory by write <code>cd d:</code> as shown below<br>
+    <figure markdown="span">
+    <img alt="Windows Setting" src="image/VScode-6.PNG" width="600" />
+    </figure></li>
+<li>Then make directory named <code>Parallel-codes</code> [<code>mkdir Parallel-codes</code>] as shown below<br>
+    <figure markdown="span">
+    <img alt="Windows Setting" src="image/VScode-7.png" width="600" />
+    </figure></li>
+<li>Then navigate to the directory<br>
+    <figure markdown="span"><br />
+<img alt="Windows Setting" src="image/VScode-8.PNG" width="600" />
+    </figure></li>
+<li>Write <code>code .</code> to open VS code on the <code>d:\Parallel-codes</code> directory
+    <figure markdown="span"><br />
+<img alt="Windows Setting" src="image/VScode-9.PNG" width="600" />
+    </figure></li>
+<li>After <code>VS code</code> open, create new file name it <code>fibo.cpp</code> and write Fibonacci code in the end of <strong><a href="https://khalid-elbadawi.github.io/C425/labs/lab01/">Lab(1)</a></strong> save <code>fibo.cpp</code>,then on the top bar select on <code>…</code> <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg></span> Terminal <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg></span> New Terminal. As shown below<br>
+    <figure markdown="span"><br />
+<img alt="VS code" src="image/VScode-11.png" width="600" />
+    </figure></li>
+<li>Before to add <code>pthread.h</code> header file you need to install <code>pthreads</code> library also known as <code>POSIX</code> threads, which is provides a way to create and manage threads in multi-threaded program. To install the library use <code>mingw-get</code> command and write <code>mingw-get install pthreads</code> on the terminal<br>
+<span style="color:red">Skip this step if you are installing g++ compiler use MinGW-w64</span>
+    <figure markdown="span"><br />
+<img alt="VS code" src="image/VScode-12.png" width="600" />
+    </figure></li>
+<li>Compile the <code>fibo.cpp</code> program. Write this command: <code>g++ -o fibo -pthread fibo.cpp</code> on the terminal.<br>
+<strong>Let us explain the command in detail:</strong><br>
+  <code>g++</code>: GUN Compiler Collection for c++<br>
+  <code>-o fibo</code>: <code>-o</code> flag to create the output file named <code>fibo</code><br>
+  <code>-pthread</code> flag: tell the compiler to link with the <code>pthread</code> library<br>
+  <code>fibo.cpp</code>: the name of the program<br>
+  <strong>Note that:</strong> if you want to use <code>openMP</code> on your program [<code>omp.h</code> header file]. You need to add [<code>-fopenmp</code>] flag [<code>g++ -o out –fopenmp program.cpp</code>] to compile the program.
+    <figure markdown="span"><br />
+<img alt="VS code" src="image/VScode-13.png" width="600" />
+    </figure></li>
+<li>Finally write <code>./fibo</code> on the terminal to run <code>fibo</code> program<br>
+    <figure markdown="span"><br />
+<img alt="VS code" src="image/VScode-15.png" width="600" />
+    </figure></li>
+</ol>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      &copy; 2023 <a href="https://github.com/AmiraGamal1"  target="_blank" rel="noopener">Amira Nasreldeein</a>
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": ".", "features": ["navigation.tabs", "navigation.sections", "toc.integrate", "navigation.top", "search.suggest", "search.highlight", "content.tabs.link", "content.code.annotation", "content.code.copy"], "search": "assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="assets/javascripts/bundle.fe8b6f2b.min.js"></script>
+      
+    
+  </body>
+</html>
