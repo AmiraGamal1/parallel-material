@@ -7,13 +7,25 @@
 
   **Software:** <br>
 
-  *   MinGW Installation Manager
+  *   MinGW Installation Manager or MinGW-w64
   *   Visual Studio code
+
 
 ## Installing g++ compiler
 
 
-1.  Visit the website **[MinGW](https://sourceforge.net/projects/mingw/)** and click on Download. MinGW is a native Windows port of the GNU Compiler Collection (GCC), that provide header files and free distributable import libraries for creating native Windows applications.
+**In this tutorial I expalined two way to install g++ compiler:**
+
+*   **MinGW** (Minimalist GUN for Windows, originally called mingw32) is a native Windows port of the GNU Compiler Collection (GCC), that provide header files and free distributable import libraries for creating native Windows applications.<br>
+**Note that: all the programs produced under MinGW are 32-bit executables, but it can be used in 32 and 64-bit versions of Windows**
+
+*   **MinGW-w64** is an advancement of the original MinGW project, It has forked it in 2007 in order to provide support for 64 bits and new APIs.<br>
+**Note that: MinGW-w64 support binaries native to Windows 64-bit and 32-bit operating systems.**
+
+### Installing g++ compiler use MinGW Installation Manager
+
+
+1.  Visit the website **[MinGW](https://sourceforge.net/projects/mingw/)** and click on Download.
 2.  Once the file is downloaded. Open the `mingw-get-setup.exe` file then click on [**Install**]<br>
     <figure markdown="span">
     ![MinGW Installation Manager Setup Tool](image/install_mingw-1.png){ width="600" }
@@ -59,8 +71,25 @@
     <figure markdown="span">
     ![Windows Setting](image/install_mingw-12.png){ width="600" }
     </figure>
-14.	Finally click on OK :material-arrow-right: OK 
+14.	Finally click on OK :material-arrow-right: OK
 
+
+### Installing g++ compiler use MinGW-w64
+
+
+**[MinGW-w64](https://www.mingw-w64.org/downloads)** is come three flavors for Windows: GitHub, WinLibs or MSYS2.
+Here we will use the **WinLibs** flavor (standalone build of GCC and MinGW-w64 for Windows).
+
+
+1. Visit the webisite **[WinLibs](https://winlibs.com/)**, Here we will download release versions **UCRT** (Univarsal C Runtime) with the threading library POSIX threads / pthread.h. Under UCRT, select GCC version with POSIX threads, for example click on Win32 (without LLVM/Clang/LLD/LLDB) or Win64 (without LLVM/Clang/LLD/LLDB) based on your system as shown below, or download GCC 14.2.0 (with POSIX threads) directorly from here **[Win32](https://github.com/brechtsanders/winlibs_mingw/releases/download/14.2.0posix-18.1.8-12.0.0-ucrt-r1/winlibs-i686-posix-dwarf-gcc-14.2.0-mingw-w64ucrt-12.0.0-r1.zip)** or **[Win64](https://github.com/brechtsanders/winlibs_mingw/releases/download/14.2.0posix-18.1.8-12.0.0-ucrt-r1/winlibs-x86_64-posix-seh-gcc-14.2.0-mingw-w64ucrt-12.0.0-r1.zip)**
+<figure markdown="span">
+![WinLibs](image/winlibs-1.png){ width="600" }
+</figure>
+2. Extract winlibs downloaded file on the `C:` directory as shown below
+<figure markdown="span">
+![WinLibs](image/winlibs-2.png){ width="600" }
+</figure>
+3. Copy the directory of the bin folder `C:\mingw64\bin` in my case, then add it to the environment variable path fellow the same steps from 11 to 14 on **Installing g++ compiler use MinGW Installation Manager**
 
 ## Installing Visual Studio Code
 
@@ -112,6 +141,7 @@
     ![VS code](image/VScode-11.png){ width="600" }
     </figure>
 8. Before to add `pthread.h` header file you need to install `pthreads` library also known as `POSIX` threads, which is provides a way to create and manage threads in multi-threaded program. To install the library use `mingw-get` command and write `mingw-get install pthreads` on the terminal<br>
+**Skip this step if you Installing g++ compiler use MinGW-w64**
     <figure markdown="span">  
     ![VS code](image/VScode-12.png){ width="600" }
     </figure>
